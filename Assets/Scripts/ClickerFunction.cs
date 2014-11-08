@@ -13,23 +13,23 @@ public class ClickerFunction : MonoBehaviour
 
 	void Start()
 	{
-				spriteRenderer = GetComponent<SpriteRenderer> (); // we are accessing the SpriteRenderer that is attached to the Gameobject
-				if (spriteRenderer.sprite == null) // if the sprite on spriteRenderer is null then
-						spriteRenderer.sprite = sprite1; // set the sprite to sprite1
+	    spriteRenderer = GetComponent<SpriteRenderer> (); // we are accessing the SpriteRenderer that is attached to the Gameobject
+		if (spriteRenderer.sprite == null) // if the sprite on spriteRenderer is null then
+		spriteRenderer.sprite = sprite1; // set the sprite to sprite1
 		AudioSource[] sources = FindObjectsOfType <AudioSource> ();
 		foreach (AudioSource s in sources) {
-					if(s.gameObject.name.Contains("keyboard"))
-						soundSource = s;
-				}
+    		if(s.gameObject.name.Contains("keyboard"))
+	    		soundSource = s;
+		}
 		if (soundSource == null) {
 			if(sources.Length > 0)
 			{
 				if(sources[0] != null)
 					soundSource = sources[0];
 			}
-				}
-
 		}
+
+	}
 	void Update()
 	{
 		Ray clickPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
