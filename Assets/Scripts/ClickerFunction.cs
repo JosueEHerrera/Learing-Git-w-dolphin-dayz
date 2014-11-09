@@ -38,7 +38,7 @@ public class ClickerFunction : MonoBehaviour
 		// See if the ray collided with an object
 		if (Physics.Raycast(clickPoint, out hitPoint))
 		{
-			if (Input.GetMouseButtonDown(0))
+			if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
 			{
 				spriteRenderer.sprite = sprite2;
 				if(soundSource != null)
@@ -53,7 +53,7 @@ public class ClickerFunction : MonoBehaviour
 				}
 
 			}
-			if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space))
 			{
 				spriteRenderer.sprite = sprite1;
 
